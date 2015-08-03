@@ -1,10 +1,10 @@
 <?php
 namespace Muffin\Github\Webservice\Driver;
 
-use Muffin\Webservice\AbstractDriver;
-use Muffin\Github\Webservice\Driver\Github\CacheBridge;
 use Github\Client;
 use Github\HttpClient\CachedHttpClient;
+use Muffin\Github\Webservice\Driver\Github\CacheBridge;
+use Muffin\Webservice\AbstractDriver;
 
 class Github extends AbstractDriver
 {
@@ -13,6 +13,11 @@ class Github extends AbstractDriver
         'method' => null,
     ];
 
+    /**
+     * {@inheritdoc}
+     *
+     * @return void
+     */
     public function initialize()
     {
         $httpClient = null;
@@ -28,6 +33,12 @@ class Github extends AbstractDriver
         $this->_authenticate();
     }
 
+    /**
+     * Handles the different supported authentication methods.
+     *
+     * @param array $credentials Github API credentials.
+     * @return void
+     */
     protected function _authenticate($credentials = [])
     {
         $this->_getMethod();
@@ -58,6 +69,13 @@ class Github extends AbstractDriver
         }
     }
 
+    /**
+     * Sets the authentication method if not already done.
+     *
+     * @return void
+     * @throws \RuntimeException If a password is provided but no username
+     *   or if a secret is provided with no clientId.
+     */
     protected function _getMethod()
     {
         if (!empty($this->_config['method'])) {
@@ -85,7 +103,5 @@ class Github extends AbstractDriver
         if (array_key_exists('token', $this->_config)) {
             $this->_config['method'] = Client::AUTH_HTTP_TOKEN;
         }
-
     }
-
 }

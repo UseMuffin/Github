@@ -48,24 +48,28 @@ class Github extends AbstractDriver
             $method = [$this->_client, 'authenticate'];
             switch ($this->_config['method']) {
                 case Client::AUTH_HTTP_PASSWORD:
-                    return call_user_func_array($method, [
+                    $args = [
                         $this->_config['username'],
                         $this->_config['password'],
                         $this->_config['method']
-                    ]);
+                    ];
+                    break;
                 case Client::AUTH_URL_CLIENT_ID:
-                    return call_user_func_array($method, [
+                    $args = [
                         $this->_config['clientId'],
                         $this->_config['token'],
                         $this->_config['method']
-                    ]);
+                    ];
+                    break;
                 default:
-                    return call_user_func_array($method, [
+                    $args = [
                         $this->_config['username'],
                         $this->_config['password'],
                         $this->_config['method']
-                    ]);
+                    ];
             }
+
+            call_user_func_array($method, $args);
         }
     }
 

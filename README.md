@@ -29,8 +29,7 @@ Plugin::load('Muffin/Github');
 
 ## Usage
 
-In your `app.php`, configure your `github` service like any other configuration (i.e.
-`Datasources`):
+In your `app.php`, configure your `github` service like any other configuration, by adding a new element to the configure array:
 
 ```php
 

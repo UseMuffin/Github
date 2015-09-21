@@ -49,7 +49,7 @@ or, to use a token for example (and full namespaced driver):
         'github' => [
             'className' => 'Muffin\Webservice\Connection',
             'service' => 'Muffin\Github\Webservice\Driver\Github',
-            'token' => $_ENV['GITHUB_TOKEN'],
+            'token' => env('GITHUB_TOKEN'),
         ]
     ]
 ```
@@ -62,8 +62,8 @@ or using your username/password combination:
         'github' => [
             'className' => 'Muffin\Webservice\Connection',
             'service' => 'Muffin/Github.Github',
-            'username' => $_ENV['GITHUB_USERNAME'],
-            'password' => $_ENV['GITHUB_PASSWORD'],
+            'username' => env('GITHUB_USERNAME'),
+            'password' => env('GITHUB_PASSWORD'),
         ]
     ]
 ```
@@ -76,8 +76,8 @@ or using your client ID and secret:
         'github' => [
             'className' => 'Muffin\Webservice\Connection',
             'service' => 'Muffin/Github.Github',
-            'clientId' => $_ENV['GITHUB_CLIENT_ID'],
-            'secret' => $_ENV['GITHUB_SECRET'],
+            'clientId' => env('GITHUB_CLIENT_ID'),
+            'secret' => env('GITHUB_SECRET'),
         ]
     ]
 ```

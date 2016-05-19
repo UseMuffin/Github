@@ -61,6 +61,12 @@ class Github extends AbstractDriver
                         $this->_config['method']
                     ];
                     break;
+                case Client::AUTH_HTTP_TOKEN:
+                    $args = [
+                        $this->_config['token'],
+                        $this->_config['method'],
+                    ];
+                    break;
                 default:
                     $args = [
                         $this->_config['username'],

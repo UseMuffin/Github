@@ -32,7 +32,7 @@
         "source": "https://github.com/usemuffin/github"
     },
     "require": {
-        "muffin/webservice": "dev-master",
+        "muffin/webservice": "^1.0",
         "knplabs/github-api": "~1.4@dev"
     },
     "require-dev": {

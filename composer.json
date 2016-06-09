@@ -33,12 +33,12 @@
     },
     "require": {
         "muffin/webservice": "^1.0",
-        "knplabs/github-api": "~1.4@dev"
+        "knplabs/github-api": "^1.4"
     },
     "require-dev": {
-        "cakephp/cakephp": "~3.0",
-        "cakephp/cakephp-codesniffer": "2.*",
-        "phpunit/phpunit": "4.1.*"
+        "cakephp/cakephp": "^3.0",
+        "cakephp/cakephp-codesniffer": "^2.0",
+        "phpunit/phpunit": "^4.1.0"
     },
     "autoload": {
         "psr-4": {
@@ -49,5 +49,11 @@
         "psr-4": {
             "Muffin\\Github\\Test\\": "tests"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
     }
+    
 }
